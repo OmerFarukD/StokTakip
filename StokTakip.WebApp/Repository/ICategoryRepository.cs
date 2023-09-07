@@ -9,5 +9,4 @@ public interface ICategoryRepository
     void Delete(int id);
     Category GetById(int id);
     List<Category> GetAll();
-
 }

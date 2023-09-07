@@ -6,8 +6,6 @@ public class ProductRepository : IProductRepository
 {
     private readonly BaseDbContext _context;
 
-
-
     public ProductRepository(BaseDbContext baseDbContext)
     {
         _context = baseDbContext;

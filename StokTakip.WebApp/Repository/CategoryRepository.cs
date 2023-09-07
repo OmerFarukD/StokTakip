@@ -2,9 +2,17 @@
 
 namespace StokTakip.WebApp.Repository;
 
+// S single responsibility
+// O Open Closed 
+// L Liskov subtition
+// ı iNTERFACE ayrışması 
+// D Dependency Inversion
+
 public class CategoryRepository : ICategoryRepository
 {
     private readonly BaseDbContext _baseDbContext;
+
+
     public CategoryRepository(BaseDbContext baseDbContext)
     {
             _baseDbContext = baseDbContext;
