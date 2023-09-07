@@ -2,79 +2,69 @@
 using StokTakip.WebApp.Models;
 using StokTakip.WebApp.Repository;
 
-namespace StokTakip.WebApp.Controllers
+namespace StokTakip.WebApp.Controllers;
+public class ProductController : Controller
 {
 
 
-    public class ProductController : Controller
+    private readonly BaseDbContext _baseDbContext;
+
+    public ProductController(BaseDbContext baseDbContext)
     {
+        _baseDbContext = baseDbContext;
+    }
+    public IActionResult Index()
+    {
+        var products = _baseDbContext.Products.ToList();
+        return View(products);
+    }
+
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View();
+    }
 
 
-        private readonly BaseDbContext _baseDbContext;
+    [HttpPost]
+    public IActionResult Create(Product product)
+    {
+        _baseDbContext.Add(product);
+        _baseDbContext.SaveChanges();
+        return RedirectToAction("Index","Product");
+    }
 
-        // Constructor args Dependency Injection
-
-        public ProductController(BaseDbContext baseDbContext)
-        {
-            _baseDbContext = baseDbContext;
-        }
-        public IActionResult Index()
-        {
-            var products = _baseDbContext.Products.ToList();
-            return View(products);
-        }
-
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
+    public IActionResult Details(int id)
+    {
+        Product? product = _baseDbContext.Products.SingleOrDefault(x => x.Id == id);
+        return View(product);
+    }
 
 
-        [HttpPost]
-        public IActionResult Create(Product product)
-        {
-            _baseDbContext.Add(product);
-            _baseDbContext.SaveChanges();
-            return RedirectToAction("Index","Product");
-        }
+    [HttpGet]
+    public IActionResult Update(int id)
+    {
+        var product = _baseDbContext.Products.Find(id);
+        return View(product);
+    }
 
-        public IActionResult Details(int id)
-        {
-            Product? product = _baseDbContext.Products.SingleOrDefault(x => x.Id == id);
-            return View(product);
-        }
+    [HttpPost]
+    public IActionResult Update(Product product)
+    {
+        _baseDbContext.Products.Update(product);
+        _baseDbContext.SaveChanges();
 
+        return RedirectToAction("Details","Product",new {id=product.Id});
+    }
 
-        [HttpGet]
-        public IActionResult Update(int id)
-        {
-            var product = _baseDbContext.Products.Find(id);
-            return View(product);
-        }
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        var product = _baseDbContext.Products.Find(id);
 
-        [HttpPost]
-        public IActionResult Update(Product product)
-        {
-            _baseDbContext.Products.Update(product);
-            _baseDbContext.SaveChanges();
+        _baseDbContext.Products.Remove(product);
+        _baseDbContext.SaveChanges();
 
-            return RedirectToAction("Details","Product",new {id=product.Id});
-        }
-
-        [HttpGet]
-        public IActionResult Delete(int id)
-        {
-            var product = _baseDbContext.Products.Find(id);
-
-            _baseDbContext.Products.Remove(product);
-            _baseDbContext.SaveChanges();
-
-            return RedirectToAction("Index","Product");
-
-
-
-        }
-
+        return RedirectToAction("Index","Product");
     }
 }
