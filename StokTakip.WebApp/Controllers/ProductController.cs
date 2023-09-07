@@ -46,6 +46,35 @@ namespace StokTakip.WebApp.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var product = _baseDbContext.Products.Find(id);
+            return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Product product)
+        {
+            _baseDbContext.Products.Update(product);
+            _baseDbContext.SaveChanges();
+
+            return RedirectToAction("Details","Product",new {id=product.Id});
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var product = _baseDbContext.Products.Find(id);
+
+            _baseDbContext.Products.Remove(product);
+            _baseDbContext.SaveChanges();
+
+            return RedirectToAction("Index","Product");
+
+
+
+        }
 
     }
 }
