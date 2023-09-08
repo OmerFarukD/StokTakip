@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace StokTakip.WebApp.Models.Dtos;
 
-namespace StokTakip.WebApp.Models;
-public class Product
+public class ProductDto
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -9,5 +8,4 @@ public class Product
     public decimal Price { get; set; }
     public int Stock { get; set; }
     public string Dealer { get; set; }
-
 }

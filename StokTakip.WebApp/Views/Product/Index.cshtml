@@ -1,19 +1,18 @@
-﻿@model List<Product>
+﻿@model ProductViewModel
 
 <table class="table table-success table-hover">
     <thead>
         <tr>
-            <th scope="col">Id</th>
+
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.ProductDtos)
         {
             <tr>
-                <th scope="row">@item.Id</th>
                 <td>@item.Name</td>
                 <td>@item.Price</td>
                 <td>@item.Stock</td>
@@ -26,3 +25,8 @@
     </tbody>
 </table>
 <a asp-controller="Product" asp-action="Create" type="button" class="btn btn-primary">Ürün Ekle</a>
+<div class="alert alert-success" role="alert">
+    Toplam  stok adedi : @Model.TotalStock
+</div>
+
+

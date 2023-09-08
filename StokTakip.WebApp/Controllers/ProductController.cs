@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StokTakip.WebApp.Models;
+using StokTakip.WebApp.Models.Dtos;
 using StokTakip.WebApp.Repository;
 
 namespace StokTakip.WebApp.Controllers;
@@ -16,7 +17,30 @@ public class ProductController : Controller
     public IActionResult Index()
     {
         var products = _baseDbContext.Products.ToList();
-        return View(products);
+
+        List<ProductDto> productsDtoList = new();
+
+        foreach (var product in products)
+        {
+          ProductDto productDto = new ProductDto()
+          {
+              Dealer = product.Dealer,
+              Description = product.Description,
+              Id = product.Id,  
+              Name = product.Name,
+              Price = product.Price,
+              Stock = product.Stock
+          };
+            productsDtoList.Add(productDto);
+        }
+
+        ProductViewModel viewModel = new ProductViewModel()
+        {
+            ProductDtos = productsDtoList,
+            TotalStock = products.Sum(x=>x.Stock)
+        };
+
+        return View(viewModel);
     }
 
     [HttpGet]
