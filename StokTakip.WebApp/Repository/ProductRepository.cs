@@ -30,9 +30,19 @@ public class ProductRepository : IProductRepository
         return _context.Products.ToList();
     }
 
+    public List<Product> GetByContainsName(string name)
+    {
+        return _context.Products.Where(x=> x.Name.Contains(name)).ToList();
+    }
+
     public Product GetById(int id)
     {
         return _context.Products.SingleOrDefault(x=> x.Id==id);
+    }
+
+    public List<Product> GetByStockRange(int min, int max)
+    {
+        return _context.Products.Where(x => x.Stock >= min && x.Stock <= max).ToList();
     }
 
     public void Update(Product product)

@@ -2,7 +2,6 @@
 
 namespace StokTakip.WebApp.Repository;
 
-public interface ICategoryRepository :IBaseRepository<Category>
+public interface IUserRepository : IBaseRepository<User>
 {
- 
 }
