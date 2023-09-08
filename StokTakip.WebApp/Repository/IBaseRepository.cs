@@ -2,7 +2,7 @@
 
 namespace StokTakip.WebApp.Repository;
 
-public interface IBaseRepository<TEntity>
+public interface IBaseRepository<TEntity> where TEntity : Entity, new() 
 {
     void Add(TEntity entity);
     void Update(TEntity entity);

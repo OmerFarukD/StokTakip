@@ -8,5 +8,6 @@ public class ProductViewModel
 
     public List<ProductDto> ProductDtos { get; set; }
     public int TotalStock { get; set; }
-   // public string SearchName { get; set; }
+    public string SearchName { get; set; }
+    public  int PageSize { get; set; }
 }

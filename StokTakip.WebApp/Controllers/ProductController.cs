@@ -51,8 +51,18 @@ public class ProductController : Controller
 
 
     [HttpPost]
-    public IActionResult Create(Product product)
+    public IActionResult Create(ProductCreateDto productDto)
     {
+        //Product product = new Product()
+        //{
+        //    Dealer=productDto.Dealer,
+        //    Description = productDto.Description,   
+        //    Name = productDto.Name, 
+        //    Price = productDto.Price,
+        //    Stock = productDto.Stock    
+
+        //};
+        Product product = productDto;
         _baseDbContext.Add(product);
         _baseDbContext.SaveChanges();
         return RedirectToAction("Index","Product");
