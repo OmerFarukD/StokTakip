@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\StokTakip.WebApp1.props" />
+</Project>

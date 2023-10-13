@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip.WebApp", "StokTakip.WebApp\StokTakip.WebApp.csproj", "{D53EB3AF-9F12-405A-A10C-2790123AEAF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StokTakip.WebApp1", "StokTakip.WebApp1\StokTakip.WebApp1.csproj", "{F0DF3CDD-576A-409C-9889-A5AF63CBA8F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D53EB3AF-9F12-405A-A10C-2790123AEAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D53EB3AF-9F12-405A-A10C-2790123AEAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D53EB3AF-9F12-405A-A10C-2790123AEAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D53EB3AF-9F12-405A-A10C-2790123AEAF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0DF3CDD-576A-409C-9889-A5AF63CBA8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0DF3CDD-576A-409C-9889-A5AF63CBA8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0DF3CDD-576A-409C-9889-A5AF63CBA8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0DF3CDD-576A-409C-9889-A5AF63CBA8F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8EA8BC1C-86D4-458B-AF00-6C92D97018A7}
+		SolutionGuid = {8EEA3579-C58C-44EC-AFD0-32D2D273439C}
 	EndGlobalSection
 EndGlobal

@@ -19,7 +19,5 @@ public class ProductCreateDto
             Description = productCreateDto.Description,
             Name = productCreateDto.Name
         };
-
     }
-
 }

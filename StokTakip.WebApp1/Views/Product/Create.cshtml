@@ -1,0 +1,28 @@
+﻿@model Product
+
+<form asp-controller="Product" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Id"  class="form-label">Id</label>
+        <input type="number" asp-for="Id" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ürün Adı</label>
+        <input type="text" asp-for="Name" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">Stok</label>
+        <input type="number" asp-for="Stock" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Ürün Değeri</label>
+        <input type="number" asp-for="Price" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Oluştur</button>
+</form>

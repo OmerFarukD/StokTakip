@@ -1,0 +1,25 @@
+﻿@model List<Product>
+
+<table class="table table-primary">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product product in Model)
+        {
+            <tr>
+                <th scope="row">@product.Id</th>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Stock</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
